@@ -1,0 +1,7 @@
+car
+hello
+sprite
+bite
+laptop
+bar
+tar

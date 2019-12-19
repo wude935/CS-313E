@@ -1,13 +1,13 @@
 #  File: MagicSquare.py
-#  Description:
-#  Student's Name: Derek
-#  Student's UT EID: DW
-#  Partner's Name:
-#  Partner's UT EID:
+#  Description: Creates a magic square and related functions
+#  Student's Name: Derek Wu
+#  Student's UT EID: DW29924
+#  Partner's Name: Yash Pathak
+#  Partner's UT EID: YKP224
 #  Course Name: CS 313E
-#  Unique Number:
-#  Date Created:
-#  Date Last Modified:
+#  Unique Number: 502010
+#  Date Created: 08/31/2019
+#  Date Last Modified: 09/05/2019
 
 # Populate a 2-D list with numbers from 1 to n2
 # This function must take as input an integer. You may assume that
@@ -25,7 +25,7 @@ def make_square(n):
     # The upper leftmost corner is coordinate (0,0) and the lower rightmost corner is coordinate (n, n)
     grid = [['blank' for i in range(n)] for j in range(n)]
     for k in range(n * n):
-        grid[y][x] = count
+        grid[y][x] = count  # Adds value to grid
         new_x = x + 1
         new_y = y + 1
         if new_x > n - 1:  # Catches values that go out right
@@ -51,10 +51,20 @@ def make_square(n):
 # 8 1 6
 
 def print_square(magic_square):
-
+    output = ''
+    longest_length = 0
+    for row in magic_square:
+        row_string = (' '.join(str(number) for number in row))
+        if (len(row_string) > longest_length):  # finds the longest length string to right adjust
+            longest_length = len(row_string)
+            print(longest_length)
     for row in magic_square:
         # Converts rows intro strings
-        print(' '.join(str(number) for number in row))
+        row_string = (' '.join(str(number) for number in row))
+        row_string = row_string.rjust(longest_length)
+        output += ('\n' + row_string)
+
+    print(output)
 
 
 # Check that the 2-D list generated is indeed a magic square
@@ -89,7 +99,7 @@ def main():
 
 
 # Prompt the user to enter an odd number 1 or greater
-3
+
 # Check the user input
 
 # Create the magic square
